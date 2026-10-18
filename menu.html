@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oh!Ratom</title>
+
+    <link rel="stylesheet" href="style.css">
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="line thick">
+            <div class="line thin">
+                <div class="header">
+                    <h1><a href="index.html"><img class="logo" src="img/ロゴ案.webp" alt=""></a></h1>
+                    <nav class="nav">
+                        <ul>
+                            <li class="none"><a href="index.html">Top</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="event.html">Event</a></li>
+                            <li><a href="reservation.html">Reservation</a></li>
+                            <li><a href=#info>Information</a></li>
+                        </ul>
+                    </nav>
+                    <button class="menu-btn" aria-label="メニュー">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="top-img menu-img">
+            <h2 class="top-title">Menu</h2>
+            <svg class="top-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0,50 C300,120 500,10 800,55
+                 S1200,110 1440,35 L1440,120 L0,120 Z" fill="#F6F1E7" />
+            </svg>
+        </div>
+
+        <div class="menu">
+            <div class="set-menu">
+                <h2 class="title menu-title ">Set Menu</h2>
+                <div class="drink-name">
+                    <p>ドリンクセット</p>
+                    <p class="price">+500円</p>
+                </div>
+                <p class="description">お好きなマフィンにドリンクをプラスできます。</p>
+
+            </div>
+
+            <h2 class="title menu-title" id="gohan-menu">Gohan Menu</h2>
+            <div class="menu-item">
+                <div class="item">
+                    <img src="img/ベーコンエッグ.webp" alt="">
+                    <p>ベーコンエッグ</p>
+                    <p>700円</p>
+                </div>
+                <div class="item">
+                    <img src="img/ポテトサラダ.webp" alt="">
+                    <p>ポテトサラダ</p>
+                    <p>650円</p>
+                </div>
+                <div class="item">
+                    <img src="img/照り焼きチキン.webp" alt="">
+                    <p>照り焼きチキン</p>
+                    <p>700円</p>
+                </div>
+                <div class="item">
+                    <img src="img/生ハムサラダ.webp" alt="">
+                    <p>生ハムサラダ</p>
+                    <p>800円</p>
+                </div>
+                <div class="item">
+                    <img src="img/トマトチーズピザ.webp" alt="">
+                    <p>トマトチーズピザ</p>
+                    <p>650円</p>
+                </div>
+                <div class="item">
+                    <img src="img/ツナサラダ.webp" alt="">
+                    <p>ツナサラダ</p>
+                    <p>650円</p>
+                </div>
+            </div>
+            <h2 class="title menu-title" id="desert-menu">Desert Menu</h2>
+            <div class="menu-item">
+                <div class="item">
+                    <img src="img/ブルーベリークリームチーズ.webp" alt="">
+                    <p>ブルーベリーチーズ</p>
+                    <p>700円</p>
+                </div>
+                <div class="item">
+                    <img src="img/焼きリンゴアイス.webp" alt="">
+                    <p>焼きリンゴアイス</p>
+                    <p>700円</p>
+                </div>
+                <div class="item">
+                    <img src="img/季節のフルーツ.webp" alt="">
+                    <p>季節のフルーツ</p>
+                    <p>700円</p>
+                </div>
+
+            </div>
+
+            <h2 class="title menu-title" id="coffee-tea">Coffee & Tea</h2>
+            <div class="coffe-tea">
+                <div>
+                    <h3 id="coffee">Coffee</h3>
+                    <div class="drink-item">
+                        <div class="drink-name">
+                            <p>Oh!Ratom ブレンド</p>
+                            <p class="price">600円</p>
+                        </div>
+                        <p class="origin">ブラジル・コロンビア産</p>
+                        <p class="description">
+                            ナッツのような香ばしさと、ほどよいコク。
+                            毎日のマフィンに寄り添う一杯。
+                        </p>
+                    </div>
+
+                    <div class="drink-item">
+                        <div class="drink-name">
+                            <p>エチオピアシングルオリジン</p>
+                            <p class="price">700円</p>
+                        </div>
+                        <p class="origin">エチオピア産</p>
+                        <p class="description">
+                            澄んだ甘みや酸味が特徴。果実を思わせるようなエレガントな味わいです。
+                        </p>
+                    </div>
+
+                    <div class="drink-item">
+                        <div class="drink-name">
+                            <p>アイスコーヒー</p>
+                            <p class="price">600円</p>
+                        </div>
+                        <p class="origin">ブラジル・コロンビア産ブレンド</p>
+                        <p class="description">
+                            キリッと冷たい、豊かなコク。毎日飲みたくなる最高の一杯。どんなマフィンにも合います。
+                        </p>
+                    </div>
+
+                    <div class="drink-item">
+                        <div class="drink-name">
+                            <p>カフェラテ</p>
+                            <p class="price">650円</p>
+                        </div>
+                        <p class="origin">ブラジル・コロンビア産ブレンド</p>
+                        <p class="description">
+                            濃厚なエスプレッソとミルクが織りなす、まろやかで贅沢な一杯。ミルクは那須のものを使用。
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+
+                    <h3 id="tea">Tea</h3>
+
+                    <div class="drink-item">
+                        <div class="drink-name">
+                            <p>イングリッシュブレックファスト</p>
+                            <p class="price">650円</p>
+                        </div>
+                        <p class="origin">インド・アッサム産などの茶葉を使用したブレンド</p>
+                        <p class="description">
+                            しっかりとしたコクと豊かな香り。ミルクを加えてもおいしく楽しめます。
+                        </p>
+                    </div>
+
+                    <div class="drink-item">
+                        <div class="drink-name">
+                            <p>アールグレイ</p>
+                            <p class="price">650円</p>
+                        </div>
+                        <p class="origin">ベルガモットの香りをつけたフレーバーティー</p>
+                        <p class="description">
+                            柑橘を思わせる爽やかな香り。デザートマフィンと相性抜群。
+                        </p>
+                    </div>
+
+                    <div class="drink-item">
+                        <div class="drink-name">
+                            <p>ダージリン</p>
+                            <p class="price">700円</p>
+                        </div>
+                        <p class="origin">インド・ダージリン地方産</p>
+                        <p class="description">
+                            マスカテルと呼ばれる、マスカットを思わせる香りが魅力。軽やかな味わいの紅茶。
+                        </p>
+                    </div>
+
+                    <div class="drink-item">
+                        <div class="drink-name">
+                            <p>ロイヤルミルクティー</p>
+                            <p class="price">700円</p>
+                        </div>
+                        <p class="origin">コクのあるアッサム茶葉を使用</p>
+                        <p class="description">
+                            茶葉をミルクと煮出した、濃厚でまろやかな味わい。チーズや卵、お肉系のマフィンと一緒に。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="about-btn">
+                <a class="btn" href="reservation.html"><span class="text">予約する</span></a>
+            </div>
+
+        </div>
+
+
+        <div class="line thick">
+            <div class="line thin">
+                <div class="blank"></div>
+            </div>
+        </div>
+    </main>
+    <footer id="info">
+        <div class="footer-container section">
+            <div>
+                <h2 class="title">Information</h2>
+                <table>
+                    <tr>
+                        <th>住所</th>
+                        <td>栃木市大平町富田1234<br>
+                            <small>新大平下駅から徒歩1分<br>
+                                栃木駅から車で15分</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>営業時間</th>
+                        <td>9：00～17：00</td>
+                    </tr>
+                    <tr>
+                        <th>定休日</th>
+                        <td>水曜日</td>
+                    </tr>
+                    <tr>
+                        <th>電話番号</th>
+                        <td>0123-456-789</td>
+                    </tr>
+                    <tr>
+                        <th>駐車場</th>
+                        <td>有（20台）/ 店舗東側</td>
+                    </tr>
+                    <tr>
+                        <th>支払方法</th>
+                        <td>現金 / クレジットカード</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3213.9387085711205!2d139.69931707581725!3d36.33803527238252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601f479298c24949%3A0x33244485912e704e!2z44OX44Op44OD44OE44GK44GK44Gy44KJ!5e0!3m2!1sja!2sjp!4v1790302516253!5m2!1sja!2sjp"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </div>
+
+        <div class="line thick">
+            <div class="line thin">
+                <div class="blank">
+                    <p>&copy;2026　Oh!Ratom -English muffins &amp; Tea-</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

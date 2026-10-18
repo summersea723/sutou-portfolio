@@ -1,0 +1,1104 @@
+@charset "UTF-8";
+
+/* ----------共通---------- */
+:root {
+    --bg-color: #F6F1E7;
+    --main-color: #004124;
+    --text-color: #001408;
+    --accent-color1: #3157A5;
+    --accent-color2: #B83A32;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Josefin Sans", "Zen Kaku Gothic New", sans-serif;
+    letter-spacing: .1em;
+    line-height: 1.5;
+    background-color: var(--bg-color);
+
+    color: var(--text-color);
+}
+
+.top-img {
+    position: relative;
+    isolation: isolate;
+    height: 150px;
+    display: grid;
+    place-items: center;
+}
+
+.top-title {
+    color: var(--bg-color);
+    text-shadow: 3px 3px 5px var(--text-color);
+    font-size: 3em;
+    max-width: 100%;
+    justify-self: start;
+    padding: 20px;
+    animation: title-fade-in 1.2s ease-out both;
+}
+
+
+.title {
+    font-weight: normal;
+    display: inline-block;
+    font-size: 36px;
+    border-bottom: 2px solid var(--text-color);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.top-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.top-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    display: block;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ----------ライン---------- */
+.line {
+    width: 100%;
+}
+
+.thick {
+    border-top: 20px solid var(--main-color);
+    border-bottom: 20px solid var(--main-color);
+    padding: 6px 0;
+}
+
+.thin {
+    border-top: 3px solid var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+.blank {
+    height: 35px;
+
+    p {
+        line-height: 35px;
+        text-align: center;
+        font-size: 14px;
+    }
+}
+
+/* ----------ボタン---------- */
+
+.btn {
+    display: inline-block;
+    width: 160px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    border-radius: 10px;
+    color: var(--bg-color);
+    background-color: var(--accent-color2);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.btn:hover {
+    transform: scale(1.1, 1.1);
+}
+
+
+/* ----------ヘッダー---------- */
+
+.logo {
+    height: 100px;
+}
+
+header {
+    max-width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    transform-origin: right top;
+    scale: 0;
+    background: var(--main-color);
+    z-index: 9999;
+    transition: .5s;
+    opacity: .95;
+
+    &.open {
+        scale: 1;
+    }
+
+    ul {
+        display: grid;
+        gap: 20px;
+
+        li {
+            text-align: right;
+
+            a {
+                font-size: 1.5em;
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.menu-btn {
+    position: fixed;
+    top: 40px;
+    right: 30px;
+    width: 30px;
+    height: 18px;
+    border: none;
+    outline: none;
+    z-index: 10000;
+
+    span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--main-color);
+        transition: .5s;
+
+        &:nth-child(1) {
+            top: 0;
+        }
+
+        &:nth-child(2) {
+            top: 8px;
+        }
+
+        &:nth-child(3) {
+            top: 16px;
+        }
+    }
+
+    &.open {
+        span {
+            background-color: var(--bg-color);
+
+            &:nth-child(1) {
+                translate: 0 8px;
+                rotate: 45deg;
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                translate: 0 -8px;
+                rotate: -45deg;
+            }
+        }
+    }
+
+}
+
+/* ----------メイン---------- */
+.main-visual {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.main-visual .slide {
+    grid-area: 1 / 1;
+    display: block;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.main-visual .slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.main-visual .slide picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.main-visual .slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.about-text {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.about-text h2 {
+    padding-bottom: 50px;
+}
+
+.about-text p {
+    padding-bottom: 20px;
+}
+
+.about-content img {
+    width: 100%;
+}
+
+
+
+/* ----------アバウト---------- */
+.about-img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("img/イングリッシュマフィン.webp");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.main-contents {
+    max-width: 100%;
+    padding: 0 1em 100px;
+}
+
+.midasi {
+    padding-top: 100px;
+    text-align: center;
+    gap: 0;
+}
+
+.sub-title {
+    font-weight: normal;
+    padding-top: 5px;
+}
+
+.text p {
+    padding-bottom: 1em;
+    text-align: justify;
+}
+
+.ingredients-list {
+    padding-top: 2em;
+}
+
+.ingredients-list li {
+    margin-bottom: 1em;
+}
+
+.ingredients-list h4 {
+    font-weight: normal;
+    margin-bottom: 0.3em;
+}
+
+.ingredients-list p {
+    padding-left: 1.5em;
+    margin: 0;
+}
+
+.about-btn {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.main-contents img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+/* ----------メニュー---------- */
+.menu {
+    padding: 100px 1.5em;
+    text-align: center;
+}
+
+.set-menu h3 {
+    text-align: left;
+}
+
+.set-menu p {
+    text-align: left;
+}
+
+.set-menu div {
+    padding: 50px 0 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-title:not(:first-child) {
+    padding-top: 100px;
+}
+
+.menu-img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("img/たくさんのイングリッシュマフィン.webp");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.menu-item {
+    display: grid;
+    gap: 2em .3em;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    padding-top: 50px;
+}
+
+.item img {
+    width: 160px;
+    border-radius: 15px;
+}
+
+.menu h3 {
+    text-align: left;
+    font-size: 1.5em;
+    padding-top: 50px;
+    border-bottom: 1px solid var(--text-color);
+}
+
+.drink-item {
+    padding: 20px 0;
+    border-bottom: 1px solid gainsboro;
+}
+
+.drink-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.drink-name p {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.drink-name .price {
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.origin {
+    color: var(--accent-color1);
+    font-size: .7em;
+    text-align: left;
+    padding-bottom: 1em;
+}
+
+.description {
+    font-size: .8em;
+    line-height: 1.8;
+    text-align: left;
+}
+
+/* -----------イベント---------- */
+.event-img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("img/event.webp");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.event {
+    width: 100%;
+    padding: 50px 1em 100px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.event .title {
+    margin-bottom: 50px;
+}
+
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 0;
+}
+
+.event-card {
+    position: relative;
+    padding: 1.5em;
+    background-color: #fff;
+    border: 1px solid var(--main-color);
+    box-sizing: border-box;
+}
+
+.event-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    font-size: 30px;
+}
+
+.event-card h3 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.event-card h3:nth-child(3) {
+    margin-bottom: 58px;
+}
+
+.event-card p {
+    margin-bottom: 20px;
+    padding-top: 10px;
+    text-align: justify;
+}
+
+.event-info {
+    box-sizing: border-box;
+    border-top: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+}
+
+
+.event-info h3 {
+    padding: 20px 0;
+    font-size: 1.5em;
+    font-weight: normal;
+}
+
+
+.event-info p {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: .9em;
+}
+
+
+.event-info p:last-child {
+    margin-bottom: 20px;
+}
+
+/* -----------予約---------- */
+.reservation-img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("img/reservation.webp");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.reservation {
+    text-align: center;
+    padding: 100px 1em;
+}
+
+.reservation p {
+    text-align: left;
+}
+
+.reservation-form {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.form-item {
+    margin-bottom: 30px;
+}
+
+.form-item label {
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.form-item label::before {
+    content: "■";
+    font-size: .8em;
+    margin-right: -3px;
+
+}
+
+.required {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 3px 7px;
+    background-color: var(--accent-color2);
+    color: #fff;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.optional {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 3px 7px;
+    background-color: var(--accent-color1);
+    color: #fff;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.form-item input,
+.form-item select,
+.form-item textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px;
+    border: 1px solid var(--main-color);
+    border-radius: 0;
+    background-color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.form-item input::placeholder,
+.form-item textarea::placeholder {
+    color: #999;
+}
+
+.form-item select {
+    cursor: pointer;
+}
+
+.form-item textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.btn button {
+    color: var(--bg-color);
+}
+
+.event-card img {
+    width: 100%;
+}
+
+/* ----------フッター---------- */
+footer {
+    text-align: center;
+    width: 100%;
+
+    a {
+        text-decoration: none;
+        color: var(--text-color);
+        padding-right: 1em;
+    }
+
+    a:hover {
+        color: var(--accent-color2);
+    }
+
+    p {
+        text-align: right;
+    }
+
+    .footer-container {
+        padding: 100px 0;
+        align-items: flex-start;
+
+    }
+}
+
+#info {
+    width: 100%;
+}
+
+table {
+    border-spacing: 1.5em;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 50px;
+
+    th {
+        font-weight: normal;
+        text-align: right;
+        vertical-align: top;
+    }
+
+    td {
+        text-align: left;
+    }
+}
+
+.map {
+    max-width: 100%;
+    padding-top: 3em;
+}
+
+.map iframe {
+    width: 350px;
+}
+
+
+/* ローディング画面 */
+
+.loading {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F6F1E7;
+    color: #004124;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* フェードアウト */
+.loading.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* ロゴとメッセージ */
+.loading-content {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px;
+    animation: loading-fade 1s ease both;
+}
+
+.loading-logo {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+    overflow-wrap: anywhere;
+}
+
+.loading-message {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    margin-bottom: 32px;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+/* プログレスバー */
+.loading-bar {
+    width: 140px;
+    height: 2px;
+    margin: 0 auto;
+    background-color: #D8D3C5;
+    overflow: hidden;
+}
+
+.loading-bar span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #004124;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: loading-progress 1.8s ease forwards;
+}
+
+/* ロゴのふんわり表示 */
+@keyframes loading-fade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes title-fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* バーが伸びる */
+@keyframes loading-progress {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes title-fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ----------デスクトップ版---------- */
+@media screen and (min-width: 1000px) {
+
+    .top-img {
+        height: 400px;
+    }
+
+
+
+    .top-title {
+        font-size: 5em;
+        padding-top: 120px;
+        font-size: 5em;
+        width: 100%;
+        max-width: 1000px;
+        box-sizing: border-box;
+        justify-self: center;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .top-wave {
+        height: 100px;
+    }
+
+    /* ----------ヘッダー ----------*/
+    .header {
+        max-width: 1000px;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    .nav {
+        position: static;
+        width: auto;
+        height: auto;
+        display: block;
+        scale: 1;
+        background: none;
+        transition: none;
+    }
+
+    .nav ul {
+        display: flex;
+        gap: 40px;
+    }
+
+    .nav ul li {
+        text-align: left;
+    }
+
+    .nav ul li a {
+        color: var(--main-color);
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
+
+    .nav ul li a:hover {
+        color: var(--accent-color2);
+        transition: all .3s;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: var(--bg-color);
+
+
+    }
+
+    header.is-visible {
+        transform: translateY(0);
+    }
+
+    /* ----------メイン---------- */
+
+    .main-visual {
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        padding-top: 98px;
+    }
+
+    .main-visual .slide picture,
+    .main-visual .slide img {
+        width: 100%;
+        height: 85vh;
+    }
+
+    .main-visual .slide img {
+        object-fit: cover;
+    }
+
+    .no-br,.none {
+        display: none;
+    }
+
+
+    .about-content {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        gap: 50px;
+        align-items: center;
+    }
+
+
+
+
+    .about-content img {
+        display: block;
+        width: 380px;
+        height: auto;
+    }
+
+    .about-text {
+        text-align: left;
+        flex: 1;
+    }
+
+    .top-btn {
+        text-align: left;
+    }
+
+    /* ----------アバウト---------- */
+    .main-contents {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 0 100px;
+    }
+
+    .main-contents img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .main-contents .text {
+        width: 100%;
+    }
+
+    .right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "image title"
+            "image text";
+        column-gap: 40px;
+        row-gap: 20px;
+        align-items: start;
+    }
+
+    .left {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "title image"
+            "text  image";
+        gap: 20px 50px;
+        align-items: start;
+    }
+
+    .midasi {
+        grid-area: title;
+        text-align: left;
+        justify-self: start;
+    }
+
+    .main-contents img {
+        grid-area: image;
+        width: 450px;
+        height: auto;
+        padding-top: 120px;
+    }
+
+    .right .text {
+        grid-area: text;
+        text-align: left;
+        width: 500px;
+
+    }
+
+    .left .text {
+        grid-area: text;
+        width: 500px;
+        margin: 0;
+        text-align: left;
+    }
+
+    /* --------------メニュー--------------- */
+    .menu {
+        max-width: 768px;
+        margin: auto;
+    }
+
+    .menu-midasi {
+        max-width: 1000px;
+        display: flex;
+        justify-content: space-around;
+        margin: 0 auto;
+
+    }
+
+    .set-menu {
+        max-width: 325px;
+        margin: auto;
+    }
+
+    .menu-item {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .item img {
+        width: 200px;
+        border-radius: 10px;
+    }
+
+    .coffe-tea {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .coffe-tea div {
+        width: 325px;
+    }
+
+    /* -------------イベント----------- */
+    .event-list {
+        max-width: 100%;
+        width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .event-card {
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 4;
+        align-items: flex-start;
+    }
+
+    .event-card h3 {
+        font-size: 1.2em;
+        margin-bottom: 0;
+    }
+
+
+    .event-info {
+        width: 620px;
+        margin: 0 auto;
+
+    }
+
+    /* -------------予約------------ */
+    .reservation {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .reservation p {
+
+        padding-left: 134px;
+    }
+
+    .form-item {
+        margin-bottom: 50px;
+    }
+
+    /* ----------フッター---------- */
+    .footer-container {
+        display: flex;
+        gap: 50px;
+        margin: auto;
+        max-width: 1000px;
+    }
+
+    .map {
+        width: 350px;
+        flex: none;
+        padding-top: 0;
+    }
+
+    .map iframe {
+        width: 600px;
+        height: 430px;
+    }
+}

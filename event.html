@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oh!Ratom</title>
+
+    <link rel="stylesheet" href="style.css">
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="line thick">
+            <div class="line thin">
+                <div class="header">
+                    <h1><a href="index.html"><img class="logo" src="img/ロゴ案.webp" alt=""></a></h1>
+                    <nav class="nav">
+                        <ul>
+                            <li class="none"><a href="index.html">Top</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="event.html">Event</a></li>
+                            <li><a href="reservation.html">Reservation</a></li>
+                            <li><a href=#info>Information</a></li>
+                        </ul>
+                    </nav>
+                    <button class="menu-btn" aria-label="メニュー">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="top-img event-img">
+            <h2 class="top-title">Event</h2>
+             <svg class="top-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0,50 C300,120 500,10 800,55
+                 S1200,110 1440,35 L1440,120 L0,120 Z" fill="#F6F1E7" />
+            </svg>
+        </div>
+        <div class="event">
+            <p>
+                食べたり、つくったり、庭に触れたり。<br>
+                Oh！Ratomでは、季節に合わせた<br class="no-br">
+                ワークショップを開催しています。
+            </p>
+
+            <div class="event-list">
+                <div class="event-card">
+                    <div class="event-icon">🥯</div>
+                    <h3>イングリッシュマフィン<br> 手作り体験</h3>
+                    <img src="img/マフィン作り.webp" alt="">
+                    <p>
+                        生地をこねて、成形して、焼き上げる。具材を乗せて、食べる。<br>
+                        自分でつくった焼きたてのイングリッシュマフィンを楽しんでみませんか？                       
+                    </p>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-icon">🌷</div>
+                    <h3>ドライフラワー<br>アレンジメント体験</h3>
+                    <img src="img/ドライフラワー体験.webp" alt="">
+                    <p>
+                        季節の花を使って、オリジナルのドライフラワーアレンジメントをつくります。
+                    </p>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-icon">🌿</div>
+                    <h3>季節のリース作り体験</h3>
+                    <img src="img/リース作り.webp" alt="">
+                    <p>
+                        季節の植物や木の実を使って、お部屋に飾れるリースをつくります。季節ごとに違った表情を楽しめます。
+                    </p>
+                </div>
+            </div>
+            <div class="event-info">
+                <h3>イベントについて</h3>
+                <p>
+                    開催日時や参加費、定員などの詳しい情報は、<br class="no-br">
+                    店頭にてご案内しています。
+                </p>
+                <p>
+                    参加のお申し込みも店頭で承っています。</p>
+                <p>気になるイベントがありましたら、<br class="no-br">
+                    お気軽にスタッフまでお声がけください。
+                </p>
+            </div>
+            <div class="about-btn">
+                <a class="btn" href="reservation.html"><span class="text">来店予約をする</span></a>
+            </div>
+        </div>
+        <div class="line thick">
+            <div class="line thin">
+                <div class="blank"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer id="info">
+        <div class="footer-container section">
+            <div>
+                <h2 class="title">Information</h2>
+                <table>
+                    <tr>
+                        <th>住所</th>
+                        <td>栃木市大平町富田1234<br>
+                            <small>新大平下駅から徒歩1分<br>
+                                栃木駅から車で15分</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>営業時間</th>
+                        <td>9：00～17：00</td>
+                    </tr>
+                    <tr>
+                        <th>定休日</th>
+                        <td>水曜日</td>
+                    </tr>
+                    <tr>
+                        <th>電話番号</th>
+                        <td>0123-456-789</td>
+                    </tr>
+                    <tr>
+                        <th>駐車場</th>
+                        <td>有（20台）/ 店舗東側</td>
+                    </tr>
+                    <tr>
+                        <th>支払方法</th>
+                        <td>現金 / クレジットカード</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3213.9387085711205!2d139.69931707581725!3d36.33803527238252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601f479298c24949%3A0x33244485912e704e!2z44OX44Op44OD44OE44GK44GK44Gy44KJ!5e0!3m2!1sja!2sjp!4v1790302516253!5m2!1sja!2sjp"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </div>
+
+        <div class="line thick">
+            <div class="line thin">
+                <div class="blank">
+                    <p>&copy;2026　Oh!Ratom -English muffins &amp; Tea-</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+   <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
